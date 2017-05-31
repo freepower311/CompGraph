@@ -7,11 +7,11 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //timer = new QTimer(this);
-    //timer->setSingleShot(false);
-    //timer->setInterval(16);
-    //timer->start();
-    //connect(timer, SIGNAL(timeout()), this, SLOT( updateScene() ));
+    timer = new QTimer(this);
+    timer->setSingleShot(false);
+    timer->setInterval(16);
+    timer->start();
+    connect(timer, SIGNAL(timeout()), this, SLOT( updateScene() ));
     //ui->checkBox->hide();
     ui->horizontalSlider->setMinimum(2);
     ui->horizontalSlider->setMaximum(128);
@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->horizontalSlider->hide();
     ui->horizontalSlider_2->hide();
-
+    ui->comboBox->hide();
     ui->comboBox->addItem("GL_POINTS");
     ui->comboBox->addItem("GL_LINES");
     ui->comboBox->addItem("GL_LINE_STRIP");

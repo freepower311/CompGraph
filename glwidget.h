@@ -17,7 +17,13 @@
 #include <QMatrix4x4>
 #include <math.h>
 
+#include <QVector3D>
+#include <QVector4D>
+
 #include <QWheelEvent>
+
+
+
 class GLWidget : public QGLWidget, public QOpenGLFunctions
 {
     int time;
@@ -27,7 +33,7 @@ class GLWidget : public QGLWidget, public QOpenGLFunctions
     int curMousePosX;
     int curMousePosY;
     double rotateX;
-    double rotateY;
+    double rotateZ;
     double translateX;
     double translateY;
     double translateZ;
@@ -37,6 +43,7 @@ class GLWidget : public QGLWidget, public QOpenGLFunctions
     int arcTess;
     GLenum mode;
     double pinch[12][3];
+
 
 private:
     QOpenGLShaderProgram *m_program;
@@ -64,6 +71,11 @@ public:
     void drawPillow();
     void drawArc2(double angle);
     void drawPinch();
+
+
 };
+
+
+
 
 #endif // GLWIDGET_H
